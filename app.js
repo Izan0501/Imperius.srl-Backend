@@ -5,6 +5,8 @@ const cors = require('cors')
 const dotenv = require('dotenv')
 const apiVersion = process.env.API_VERSION
 
+// require('dotenv').config();
+
 const app = express();
 
 // Config header HTTP - CORS
