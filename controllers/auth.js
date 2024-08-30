@@ -53,8 +53,6 @@ async function login(req, res) {
     //Credential identification
     try {
         const user = await User.findOne({ email: email.toLowerCase() });
-        console.log(user);
-
 
         if (!user) res.status(400).send({ msg: "Incorrect Email" });
 

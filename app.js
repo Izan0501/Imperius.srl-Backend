@@ -2,7 +2,6 @@
 const express = require('express')
 const bodyParser = require('body-parser');
 const cors = require('cors')
-const dotenv = require('dotenv')
 const apiVersion = process.env.API_VERSION
 
 // require('dotenv').config();
