@@ -12,7 +12,8 @@ const app = express();
 app.use(cors());
 
 // import Routes
-const authRouter = require('./router/auth')
+const authRouter = require('./router/auth');
+const userRoutes = require('./router/user');
 
 // Body Parser
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -25,5 +26,6 @@ app.use(express.static('uploads'));
 
 //Config Routes
 app.use(`/api/${apiVersion}`, authRouter);
+app.use(`/api/${apiVersion}`, userRoutes);
 
 module.exports = app

@@ -15,10 +15,15 @@ function createAccessToken(user) {
         exp: expToken.getTime(),
     };
 
-    return jwt.sign(payload, JWT_SECRET_KEY);
+    return jwt.sign(payload, JWT_SECRET_KEY);    
+}
+
+function decode(token) {
+    return jwt.decode(token, JWT_SECRET_KEY, true);
 }
 
 module.exports = {
     createAccessToken,
+    decode,
 }
 
