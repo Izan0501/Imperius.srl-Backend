@@ -6,9 +6,9 @@ async function getUser(req, res) {
     const user = await User.findById(user_id)
 
     if (!user) {
-        res.status(400).send({msg: 'Undefined User'})
+        res.status(400).send({ msg: 'Undefined User' })
     } else {
-        console.log(user)
+        console.log(user);
     }
 
 
