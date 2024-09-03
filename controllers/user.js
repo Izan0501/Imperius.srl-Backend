@@ -7,8 +7,6 @@ async function getUser(req, res) {
 
     if (!user) {
         res.status(400).send({ msg: 'Undefined User' })
-    } else {
-        console.log(user);
     }
 
 
