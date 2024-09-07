@@ -28,6 +28,18 @@ async function getProduct(req, res) {
     }
 };
 
+async function getSpecificProduct(req, res) {
+    try {
+        const { id } = req.params;
+        // const dataProduct = req.body
+
+        console.log(id);
+        // const products = await Product.findById();
+    } catch (error) {
+        res.status(500).send({ msg: `Error To Get Product: ${error}` });
+    }
+};
+
 async function updateProduct(req, res) {
     const { id } = req.params;
     const productData = req.body;
@@ -37,7 +49,6 @@ async function updateProduct(req, res) {
         productData.image = imagePath
     };
 
-    console.log(productData);
     res.status(200).send(productData);
 
     try {
@@ -63,5 +74,6 @@ module.exports = {
     createProduct,
     getProduct,
     updateProduct,
-    deleteProduct
+    deleteProduct,
+    getSpecificProduct
 }
