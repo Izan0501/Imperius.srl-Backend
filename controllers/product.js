@@ -31,10 +31,8 @@ async function getProduct(req, res) {
 async function getSpecificProduct(req, res) {
     try {
         const { id } = req.params;
-        // const dataProduct = req.body
-
-        console.log(id);
-        // const products = await Product.findById();
+        const product = await Product.findById(id);
+        console.log(product);
     } catch (error) {
         res.status(500).send({ msg: `Error To Get Product: ${error}` });
     }
