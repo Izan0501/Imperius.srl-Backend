@@ -32,7 +32,7 @@ async function getSpecificProduct(req, res) {
     try {
         const { id } = req.params;
         const product = await Product.findById(id);
-        console.log(product);
+        res.status(200).send(product);
     } catch (error) {
         res.status(500).send({ msg: `Error To Get Product: ${error}` });
     }
