@@ -1,5 +1,3 @@
-// req: Recibe client data
-// res: send an answer to client
 const User = require('../models/user');
 const bcrypt = require('bcryptjs');
 const jwt = require('../utils/jwt')
