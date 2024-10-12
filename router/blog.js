@@ -9,6 +9,7 @@ const md_upload = multiparty({ uploadDir: './uploads/blog' });
 
 api.post('/blog', [md_upload], BlogController.createBlog);
 api.get('/blogs', BlogController.getBlog);
-
+api.get('/blog/:id', BlogController.getSpecificBlog);
+api.delete('/blog/:id', BlogController.deleteBlog);
 
 module.exports = api

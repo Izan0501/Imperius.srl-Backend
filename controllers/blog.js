@@ -27,7 +27,30 @@ async function getBlog(req, res) {
     }
 };
 
+async function getSpecificBlog(req, res) {
+    try {
+        const { id } = req.params;
+        const blog = await Blog.findById(id);
+        res.status(200).send(blog);
+    } catch (error) {
+        res.status(500).send({ msg: `Error To Get Blog: ${error}` });
+    }
+};
+
+async function deleteBlog(req, res) {
+    const { id } = req.params;
+
+    try {
+        await Blog.findByIdAndDelete(id)
+        res.status(200).send({ msg: 'Deleted' })
+    } catch (error) {
+        res.status(400).send({ msg: `Delete Error: ${error}` });
+    }
+};
+
 module.exports = {
     createBlog,
     getBlog,
+    getSpecificBlog,
+    deleteBlog
 }
